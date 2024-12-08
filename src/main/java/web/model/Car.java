@@ -5,6 +5,7 @@ public class Car {
     private int year;
     private int dateOfSail;
 
+
     public Car(String model, int year, int dateOfSail) {
         this.model = model;
         this.year = year;
@@ -37,11 +38,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "model='" + model + '\'' +
-                ", year=" + year +
-                ", dateOfSail=" + dateOfSail +
-                '}';
+        return "Car{" + "model='" + model + '\'' + ", year=" + year + ", dateOfSail=" + dateOfSail + '}';
     }
 
     @Override
