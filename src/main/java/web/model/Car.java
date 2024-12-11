@@ -1,15 +1,20 @@
 package web.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Car {
     private String model;
     private int year;
-    private int dateOfSail;
+    private int yearOfSail;
 
+    public Car() {
+    }
 
-    public Car(String model, int year, int dateOfSail) {
+    public Car(String model, int year, int yearOfSail) {
         this.model = model;
         this.year = year;
-        this.dateOfSail = dateOfSail;
+        this.yearOfSail = yearOfSail;
     }
 
     public String getModel() {
@@ -28,17 +33,17 @@ public class Car {
         this.year = year;
     }
 
-    public int getDateOfSail() {
-        return dateOfSail;
+    public int getYearOfSail() {
+        return yearOfSail;
     }
 
-    public void setDateOfSail(int dateOfSail) {
-        this.dateOfSail = dateOfSail;
+    public void setYearOfSail(int yearOfSail) {
+        this.yearOfSail = yearOfSail;
     }
 
     @Override
     public String toString() {
-        return "Car{" + "model='" + model + '\'' + ", year=" + year + ", dateOfSail=" + dateOfSail + '}';
+        return "Car{" + "model='" + model + '\'' + ", year=" + year + ", dateOfSail=" + yearOfSail + '}';
     }
 
     @Override
@@ -46,14 +51,14 @@ public class Car {
         if (o == null || getClass() != o.getClass()) return false;
 
         Car car = (Car) o;
-        return year == car.year && dateOfSail == car.dateOfSail && model.equals(car.model);
+        return year == car.year && yearOfSail == car.yearOfSail && model.equals(car.model);
     }
 
     @Override
     public int hashCode() {
         int result = model.hashCode();
         result = 31 * result + year;
-        result = 31 * result + dateOfSail;
+        result = 31 * result + yearOfSail;
         return result;
     }
 }
