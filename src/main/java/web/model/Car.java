@@ -1,20 +1,27 @@
 package web.model;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Car {
+    private int id;
     private String model;
     private int year;
     private int yearOfSail;
 
-    public Car() {
-    }
+    private static int count = 1;
+
 
     public Car(String model, int year, int yearOfSail) {
         this.model = model;
         this.year = year;
         this.yearOfSail = yearOfSail;
+        this.id = count++;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getModel() {
@@ -43,7 +50,12 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" + "model='" + model + '\'' + ", year=" + year + ", dateOfSail=" + yearOfSail + '}';
+        return "Car{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", year=" + year +
+                ", yearOfSail=" + yearOfSail +
+                '}';
     }
 
     @Override
